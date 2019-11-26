@@ -46,7 +46,7 @@ const blockStyles = [
 ];
 
 const parseElement = e => {
-  let text = e.textRun.content;
+  let text = e.textRun.content.trim();
 
   blockStyles.forEach(block => {
     text = block.condition(text, e) ? block.effect(text, e) : text;
